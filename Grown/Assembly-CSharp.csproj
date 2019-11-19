@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Fade.cs" />
     <Compile Include="Assets\Scripts\item.cs" />
     <Compile Include="Assets\Scripts\ItemDesc.cs" />
+    <Compile Include="Assets\Scripts\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\ItemEnter.cs" />
     <Compile Include="Assets\Scripts\ItemHover.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSortingLayer.cs" />
