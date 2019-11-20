@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\ItemDrop.cs" />
     <Compile Include="Assets\Scripts\ItemEnter.cs" />
     <Compile Include="Assets\Scripts\ItemHover.cs" />
+    <Compile Include="Assets\Scripts\LoopManager.cs" />
     <Compile Include="Assets\Scripts\MeshRendererSortingLayer.cs" />
     <Compile Include="Assets\Scripts\MoveCar.cs" />
     <Compile Include="Assets\Scripts\MoveCharacter.cs" />
