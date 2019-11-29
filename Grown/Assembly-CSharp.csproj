@@ -121,6 +121,7 @@
     <Compile Include="Assets\Scripts\Old Scripts\SoundController.cs" />
     <Compile Include="Assets\Scripts\Old Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Mae Mae owo/Documents/GitHub/Grown/Grown/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
