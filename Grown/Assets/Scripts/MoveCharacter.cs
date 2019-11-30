@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveCharacter : MonoBehaviour
 {
@@ -35,9 +36,10 @@ public class MoveCharacter : MonoBehaviour
             {
                 //levelTwo.SetActive(false);
                 //levelThree.SetActive(true);
-                walk1 = character.GetComponent<LoopManager>().loop1 = false;
-                walk2 = character.GetComponent<LoopManager>().loop2 = true;
-                walk3 = character.GetComponent<LoopManager>().loop3 = false;
+                walk1 = false;
+                walk2 = true;
+                walk3 = false;
+                SceneManager.LoadScene("04_Driving");
                 Debug.Log("Loop 1 done.");
             }
             if (Input.GetMouseButtonDown(0))
@@ -58,9 +60,10 @@ public class MoveCharacter : MonoBehaviour
             {
                 //levelTwo.SetActive(false);
                 //levelThree.SetActive(true);
-                walk1 = character.GetComponent<LoopManager>().loop1 = false;
-                walk2 = character.GetComponent<LoopManager>().loop2 = false;
-                walk3 = character.GetComponent<LoopManager>().loop3 = true;
+                walk1 = false;
+                walk2 = false;
+                walk3 = true;
+                SceneManager.LoadScene("04_Driving");
                 Debug.Log("Loop 2 done.");
             }
             if (Input.GetMouseButtonDown(0))
@@ -79,8 +82,10 @@ public class MoveCharacter : MonoBehaviour
             }
             else if (positionX >= 4.24f)
             {
-                //levelTwo.SetActive(false);
-                //levelThree.SetActive(true);
+                walk1 = false;
+                walk2 = false;
+                walk3 = false;
+                SceneManager.LoadScene("04_Driving");
                 Debug.Log("Loop 3 done.");
             }
             if (Input.GetMouseButtonDown(0))
