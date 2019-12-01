@@ -29,17 +29,18 @@ public class Timer : MonoBehaviour
         if (timeLeft <= 0)
         {
             //startFading();
-            LoadByIndex(2);
-            if (timeLeft <= 0)
-            {
-                Time.timeScale = 0;
+            //LoadByIndex(2);
+            StartCoroutine(LoadYourAsyncScene());
+            //if (timeLeft <= 0)
+            //{
+                //Time.timeScale = 0;
                 //startFading();
-                moveNext = true;
+                //moveNext = true;
                 /*if (moveNext == true)
                 {
                     nextScene();
                 }*/
-            }
+            //}
         }
             //timeLeft = 0;
         //startFading();
@@ -73,10 +74,26 @@ public class Timer : MonoBehaviour
     /*public void nextScene()
     {
         SceneManager.LoadScene("03_Walking");
-    }*/
+    }
 
     public void LoadByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }*/
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("03_Walking");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

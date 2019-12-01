@@ -39,7 +39,8 @@ public class MoveCharacter : MonoBehaviour
                 walk1 = false;
                 walk2 = true;
                 walk3 = false;
-                LoadByIndex(3);
+                //LoadByIndex(3);
+                StartCoroutine(LoadYourAsyncScene());
                 Debug.Log("Loop 1 done.");
             }
             if (Input.GetMouseButtonDown(0))
@@ -97,8 +98,24 @@ public class MoveCharacter : MonoBehaviour
         character.transform.position = new Vector3(positionX, -1.5f, 0f);
     }
 
-    public void LoadByIndex(int sceneIndex)
+    /*public void LoadByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }*/
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("04_Driving");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }

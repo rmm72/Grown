@@ -35,7 +35,8 @@ public class CarDrag : MonoBehaviour
         if (car.position.x >= 7.80f)
         {
             Debug.Log("Car reached end.");
-            LoadByIndex(4);
+            //LoadByIndex(4);
+            StartCoroutine(LoadYourAsyncScene());
         }
     }
 
@@ -56,8 +57,24 @@ public class CarDrag : MonoBehaviour
         }
     }
 
-    public void LoadByIndex(int sceneIndex)
+    /*public void LoadByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }*/
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("05_Dorm");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
