@@ -6,7 +6,7 @@ using System.Linq;
 /// but not displayed in the inspector. Getting MeshRenderer to render in front
 /// of a SpriteRenderer is pretty hard without this.
 [CustomEditor(typeof(MeshRenderer))]
-public class MeshRendererSortingEditor : Editor
+/*public class MeshRendererSortingEditor : Editor
 {
 
     public override void OnInspectorGUI()
@@ -51,4 +51,4 @@ public class MeshRendererSortingEditor : Editor
         return layers[newLayerValue].id;
     }
 
-}
+}*/

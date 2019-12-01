@@ -29,7 +29,7 @@ public class Timer : MonoBehaviour
         if (timeLeft <= 0)
         {
             //startFading();
-            SceneManager.LoadScene("03_Walking");
+            LoadByIndex(2);
             if (timeLeft <= 0)
             {
                 Time.timeScale = 0;
@@ -74,4 +74,9 @@ public class Timer : MonoBehaviour
     {
         SceneManager.LoadScene("03_Walking");
     }*/
+
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+    }
 }

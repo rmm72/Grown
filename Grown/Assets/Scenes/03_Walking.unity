@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 298207625}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -448,10 +448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7feb1fda2baf40f4ab2c0afe709b0eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionX: 0
   character: {fileID: 298207621}
-  loop1: 0
-  loop2: 0
-  loop3: 0
+  walk1: 0
+  walk2: 0
+  walk3: 0
 --- !u!1 &301453978
 GameObject:
   m_ObjectHideFlags: 0

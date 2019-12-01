@@ -39,7 +39,7 @@ public class MoveCharacter : MonoBehaviour
                 walk1 = false;
                 walk2 = true;
                 walk3 = false;
-                SceneManager.LoadScene("04_Driving");
+                LoadByIndex(3);
                 Debug.Log("Loop 1 done.");
             }
             if (Input.GetMouseButtonDown(0))
@@ -95,5 +95,10 @@ public class MoveCharacter : MonoBehaviour
         }
        
         character.transform.position = new Vector3(positionX, -1.5f, 0f);
+    }
+
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }

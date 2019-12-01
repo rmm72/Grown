@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fade : MonoBehaviour
 {
-    public GameObject canvasGroup;
+    /*public GameObject canvasGroup;
 
     //For OnClick method, attach to button
     public void FadeMe()
@@ -22,5 +22,5 @@ public class Fade : MonoBehaviour
         }
         canvasGroup.interactable = false;
         yield return null;
-    }
+    }*/
 }

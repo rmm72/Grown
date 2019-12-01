@@ -35,7 +35,7 @@ public class CarDrag : MonoBehaviour
         if (car.position.x >= 7.80f)
         {
             Debug.Log("Car reached end.");
-            SceneManager.LoadScene("05_Dorm");
+            LoadByIndex(4);
         }
     }
 
@@ -54,5 +54,10 @@ public class CarDrag : MonoBehaviour
                 Debug.Log("Negative thought bubble gone.");
                 break;
         }
+    }
+
+    public void LoadByIndex(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }
