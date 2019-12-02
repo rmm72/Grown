@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - CarBubbles
     - CarDrag
+    - CarDrag2
     - Fade
     - Floater
     - ItemDesc
@@ -11,7 +12,9 @@ ScriptsOnlyBuild:
     - MoveCharacter
     - Quit_On_Escape
     - Scrolling
+    - SoundManager
     - Timer
+    - Timer2
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -45,6 +48,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -55,6 +62,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9940}
     - Class: 114
       Script: {instanceID: 10354}
+    - Class: 114
+      Script: {instanceID: 10444}
     - Class: 114
       Script: {instanceID: 10788}
     - Class: 114
@@ -67,6 +76,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11350}
     - Class: 114
       Script: {instanceID: 11698}
+    - Class: 114
+      Script: {instanceID: 50130}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -313,6 +324,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11350}
     - Class: 114
       Script: {instanceID: 11698}
+    - Class: 114
+      Script: {instanceID: 62940}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -329,7 +342,72 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 224
       Script: {instanceID: 0}
-    Assets/Scenes/06_Credits.unity:
+    Assets/Scenes/06_DriveBack.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9722}
+    - Class: 114
+      Script: {instanceID: 9892}
+    - Class: 114
+      Script: {instanceID: 9940}
+    - Class: 114
+      Script: {instanceID: 10354}
+    - Class: 114
+      Script: {instanceID: 10726}
+    - Class: 114
+      Script: {instanceID: 10788}
+    - Class: 114
+      Script: {instanceID: 11188}
+    - Class: 114
+      Script: {instanceID: 11306}
+    - Class: 114
+      Script: {instanceID: 11350}
+    - Class: 114
+      Script: {instanceID: 11698}
+    - Class: 114
+      Script: {instanceID: 35428}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/07_Credits.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -354,6 +432,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9940}
     - Class: 114
       Script: {instanceID: 10354}
+    - Class: 114
+      Script: {instanceID: 10444}
     - Class: 114
       Script: {instanceID: 10788}
     - Class: 114
@@ -1245,7 +1325,7 @@ ScriptsOnlyBuild:
     className: AlphaButtonClickMask
   - hash:
       serializedVersion: 2
-      Hash: 9afbf8cb96ca42b1f3f7afef53a90432
+      Hash: e17630d1c1b3acd8c371a2b3596e8a18
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Timer
@@ -1639,6 +1719,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: dde1e0a6471c08b1dbaa29092c7d500d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CarDrag2
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManager
+  - hash:
+      serializedVersion: 2
+      Hash: 9afbf8cb96ca42b1f3f7afef53a90432
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer2
   platform: 5
   scenePathNames:
   - Assets/Scenes/01_StartScreen.unity
@@ -1646,5 +1744,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/03_Walking.unity
   - Assets/Scenes/04_Driving.unity
   - Assets/Scenes/05_Dorm.unity
-  - Assets/Scenes/06_Credits.unity
-  playerPath: C:/Users/Mae Mae owo/Documents/GitHub/Grown/AlphaTest/Grown.exe
+  - Assets/Scenes/06_DriveBack.unity
+  - Assets/Scenes/07_Credits.unity
+  playerPath: C:/Users/ronal/Documents/GitHub/Grown/AlphaTest/Grown.exe

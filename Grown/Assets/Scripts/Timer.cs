@@ -11,6 +11,13 @@ public class Timer : MonoBehaviour
     public bool startTimer;
     public bool moveNext;
 
+    public bool first;
+    public bool second;
+    public bool third;
+    public GameObject LoopOne;
+    public GameObject LoopTwo;
+    public GameObject LoopThree;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,29 +27,46 @@ public class Timer : MonoBehaviour
         solid.material.color = c;
         startTimer = false;
         moveNext = false;*/
+
+        first = true;
+        second = false;
+        third = false;
+        LoopOne.SetActive(true);
+        LoopTwo.SetActive(false);
+        LoopThree.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0)
+        if (timeLeft <= 0 && first == true && second == false && third == false)
         {
             //startFading();
             //LoadByIndex(2);
+            Debug.Log("Item Loop 2 starting...");
             StartCoroutine(LoadYourAsyncScene());
-            //if (timeLeft <= 0)
-            //{
-                //Time.timeScale = 0;
-                //startFading();
-                //moveNext = true;
-                /*if (moveNext == true)
-                {
-                    nextScene();
-                }*/
-            //}
+            first = true;
+            second = true;
+            third = false;
+            LoopOne.SetActive(true);
+            LoopTwo.SetActive(true);
+            LoopThree.SetActive(false);
         }
-            //timeLeft = 0;
+        else if (timeLeft <= 0 && first == true && second == true && third == false)
+        {
+            //startFading();
+            //LoadByIndex(2);
+            Debug.Log("Item Loop 3 starting...");
+            StartCoroutine(LoadYourAsyncScene());
+            first = true;
+            second = true;
+            third = true;
+            LoopOne.SetActive(true);
+            LoopTwo.SetActive(true);
+            LoopThree.SetActive(true);
+        }
+        //timeLeft = 0;
         //startFading();
 
     }

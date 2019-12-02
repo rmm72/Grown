@@ -144,7 +144,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69245382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28499538, y: 0.19734439, z: -882.2798}
+  m_LocalPosition: {x: -0.21999997, y: 0.19734439, z: -882.2798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1227726692}
@@ -506,7 +506,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190935316}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28499538, y: 0.19734439, z: -882.2798}
+  m_LocalPosition: {x: -0.21999997, y: 0.19734439, z: -882.2798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2109482371}
@@ -2262,8 +2262,8 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -2325,6 +2325,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimer: 0
   moveNext: 0
+  first: 0
+  second: 0
+  third: 0
+  LoopOne: {fileID: 190935316}
+  LoopTwo: {fileID: 1798177495}
+  LoopThree: {fileID: 69245382}
 --- !u!222 &1152703507
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4152,7 +4158,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798177495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28499538, y: 0.19734439, z: -882.2798}
+  m_LocalPosition: {x: -0.22, y: 0.19734439, z: -882.2798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 92730930}
@@ -4269,7 +4275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971183702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.28499538, y: 0.19734439, z: -882.2798}
+  m_LocalPosition: {x: -0.21999997, y: 0.19734439, z: -882.2798}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 520330781}

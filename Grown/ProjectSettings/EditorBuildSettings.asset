@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/05_Dorm.unity
     guid: bd35b165c6eb70b4fa0ad419004641b6
   - enabled: 1
-    path: Assets/Scenes/06_Credits.unity
+    path: Assets/Scenes/06_DriveBack.unity
+    guid: 73610c4017933434b9e6dd64438bed18
+  - enabled: 1
+    path: Assets/Scenes/07_Credits.unity
     guid: 0556652ea9463f846b7e59775c380281
   m_configObjects: {}

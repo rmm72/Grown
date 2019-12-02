@@ -36,18 +36,18 @@ public class MoveCharacter : MonoBehaviour
             {
                 //levelTwo.SetActive(false);
                 //levelThree.SetActive(true);
-                walk1 = false;
+                walk1 = true;
                 walk2 = true;
                 walk3 = false;
                 //LoadByIndex(3);
                 StartCoroutine(LoadYourAsyncScene());
-                Debug.Log("Loop 1 done.");
+                Debug.Log("Walking Loop 2 done.");
             }
             if (Input.GetMouseButtonDown(0))
             {
                 positionX += 0.75f;
             }
-        } else if (walk1 == false && walk2 == true && walk3 == true)
+        } else if (walk1 == true && walk2 == true && walk3 == false)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {
@@ -60,12 +60,9 @@ public class MoveCharacter : MonoBehaviour
             else if (positionX >= 4.24f)
             {
                 //levelTwo.SetActive(false);
-                //levelThree.SetActive(true);
-                walk1 = false;
-                walk2 = false;
-                walk3 = true;
-                SceneManager.LoadScene("04_Driving");
-                Debug.Log("Loop 2 done.");
+                //levelThree.SetActive(true);          
+                StartCoroutine(LoadYourAsyncScene());
+                Debug.Log("Walking Loop 3 done.");
             }
             if (Input.GetMouseButtonDown(0))
             {
@@ -86,8 +83,8 @@ public class MoveCharacter : MonoBehaviour
                 walk1 = false;
                 walk2 = false;
                 walk3 = false;
-                SceneManager.LoadScene("04_Driving");
-                Debug.Log("Loop 3 done.");
+                StartCoroutine(LoadYourAsyncScene());
+                Debug.Log("Walking Loop 3 done.");
             }
             if (Input.GetMouseButtonDown(0))
             {

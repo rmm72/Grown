@@ -1200,8 +1200,8 @@ MonoBehaviour:
   car: {fileID: 0}
   direction: {x: 0, y: 0}
   boostSpeed: 100
-  moveSpeed: 100
-  slowSpeed: 5
+  moveSpeed: 30
+  slowSpeed: 0.5
 --- !u!50 &1313089035
 Rigidbody2D:
   serializedVersion: 4
@@ -1366,8 +1366,8 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 2
+  m_ReferenceResolution: {x: 1280, y: 720}
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
