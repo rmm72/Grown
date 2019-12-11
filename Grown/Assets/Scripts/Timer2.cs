@@ -9,7 +9,7 @@ public class Timer2 : MonoBehaviour
     public static float timeLeft = 10f;
 
     public bool startTimer;
-    public bool moveNext;
+    public static bool moveNext2;
 
 
     // Start is called before the first frame update
@@ -21,6 +21,8 @@ public class Timer2 : MonoBehaviour
         solid.material.color = c;
         startTimer = false;
         moveNext = false;*/
+        moveNext2 = false;
+        Fade.moveLevel = true;
     }
 
     // Update is called once per frame
@@ -32,6 +34,8 @@ public class Timer2 : MonoBehaviour
             //startFading();
             //LoadByIndex(2);
             Debug.Log("Item Loop 2 starting...");
+            moveNext2 = true;
+            Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
         }
         /*else if (timeLeft <= 0)

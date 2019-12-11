@@ -12,10 +12,15 @@ public class CarDrag : MonoBehaviour
     public float moveSpeed = 1f;
     public float slowSpeed = 0.25f;
 
+    public static bool drive1;
+
     // Start is called before the first frame update
     void Start()
     {
         car = GetComponent<Rigidbody2D>();
+        car.transform.position = new Vector3(-8.85f, 1.89f, -476.9f);
+        drive1 = false;
+        Fade.moveLevel = true;
     }
 
     // Update is called once per frame
@@ -36,6 +41,8 @@ public class CarDrag : MonoBehaviour
         {
             Debug.Log("Car reached end.");
             //LoadByIndex(4);
+            drive1 = true;
+            Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
         }
     }

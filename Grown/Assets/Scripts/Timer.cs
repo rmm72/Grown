@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public static float timeLeft = 15f;
 
     public bool startTimer;
-    public bool moveNext;
+    public static bool moveNext;
 
     public bool first;
     public bool second;
@@ -27,7 +27,8 @@ public class Timer : MonoBehaviour
         solid.material.color = c;
         startTimer = false;
         moveNext = false;*/
-
+        moveNext = false;
+        Fade.moveLevel = true;
         first = true;
         second = false;
         third = false;
@@ -45,6 +46,8 @@ public class Timer : MonoBehaviour
             //startFading();
             //LoadByIndex(2);
             Debug.Log("Item Loop 2 starting...");
+            moveNext = true;
+            Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
             first = true;
             second = true;
@@ -53,19 +56,21 @@ public class Timer : MonoBehaviour
             LoopTwo.SetActive(true);
             LoopThree.SetActive(false);
         }
-        else if (timeLeft <= 0 && first == true && second == true && third == false)
+        /*else if (timeLeft <= 0 && first == true && second == true && third == false)
         {
             //startFading();
             //LoadByIndex(2);
             Debug.Log("Item Loop 3 starting...");
             StartCoroutine(LoadYourAsyncScene());
+            moveNext = true;
+            Fade.moveLevel = false;
             first = true;
             second = true;
             third = true;
             LoopOne.SetActive(true);
             LoopTwo.SetActive(true);
             LoopThree.SetActive(true);
-        }
+        }*/
         //timeLeft = 0;
         //startFading();
 
@@ -91,7 +96,7 @@ public class Timer : MonoBehaviour
     void OnMouseOver()
     {
         startTimer = true;
-        timeLeft -= Time.deltaTime;
+        //timeLeft -= Time.deltaTime;
         Debug.Log("Timer has started.");
     }
 

@@ -32,7 +32,7 @@ public class ItemDesc : MonoBehaviour
     void OnMouseOver()
     {
         mouseOver = true;
-        Debug.Log("Mouse is over GameObject.");
+        //Debug.Log("Mouse is over GameObject.");
     }
 
     public void helloItem()
@@ -44,7 +44,7 @@ public class ItemDesc : MonoBehaviour
     void OnMouseExit()
     {
         mouseOver = false;
-        Debug.Log("Mouse is NOT over GameObject.");
+        //Debug.Log("Mouse is NOT over GameObject.");
     }
 
     public void noItem()

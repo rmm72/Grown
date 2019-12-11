@@ -9,20 +9,21 @@ public class MoveCharacter : MonoBehaviour
     //public GameObject levelTwo;
     //public GameObject levelThree;
     public GameObject character;
-    public bool walk1;
-    public bool walk2;
-    public bool walk3;
+    public static bool walk1;
+    public static bool walk2;
+    public static bool walk3;
 
     public void Start()
     {
         positionX = -3.24f;
-        walk1 = true;
+        walk1 = false;
         walk2 = false;
         walk3 = false;
+        Fade.moveLevel = true;
     }
     void Update()
     {
-        if (walk1 == true && walk2 == false && walk3 == false)
+        if (walk1 == false && walk2 == false && walk3 == false)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {
@@ -37,17 +38,18 @@ public class MoveCharacter : MonoBehaviour
                 //levelTwo.SetActive(false);
                 //levelThree.SetActive(true);
                 walk1 = true;
-                walk2 = true;
+                walk2 = false;
                 walk3 = false;
+                Fade.moveLevel = false;
                 //LoadByIndex(3);
                 StartCoroutine(LoadYourAsyncScene());
-                Debug.Log("Walking Loop 2 done.");
+                Debug.Log("Walking Loop 1 done.");
             }
             if (Input.GetMouseButtonDown(0))
             {
                 positionX += 0.75f;
             }
-        } else if (walk1 == true && walk2 == true && walk3 == false)
+        } else if (walk1 == true && walk2 == false && walk3 == false)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {
@@ -60,15 +62,19 @@ public class MoveCharacter : MonoBehaviour
             else if (positionX >= 4.24f)
             {
                 //levelTwo.SetActive(false);
-                //levelThree.SetActive(true);          
+                //levelThree.SetActive(true); 
+                walk1 = false;
+                walk2 = true;
+                walk3 = false;
+                Fade.moveLevel = false;
                 StartCoroutine(LoadYourAsyncScene());
-                Debug.Log("Walking Loop 3 done.");
+                Debug.Log("Walking Loop 2 done.");
             }
             if (Input.GetMouseButtonDown(0))
             {
                 positionX += 1.15f;
             }
-        } else if (walk1 == false && walk2 == false && walk3 == true)
+        } else if (walk1 == true && walk2 == true && walk3 == false)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {
@@ -83,7 +89,8 @@ public class MoveCharacter : MonoBehaviour
                 walk1 = false;
                 walk2 = false;
                 walk3 = false;
-                StartCoroutine(LoadYourAsyncScene());
+                Fade.moveLevel = false;
+                //StartCoroutine(LoadYourAsyncScene());
                 Debug.Log("Walking Loop 3 done.");
             }
             if (Input.GetMouseButtonDown(0))
