@@ -126,6 +126,8 @@
     <Compile Include="Assets\Scripts\Old Scripts\Teleporter.cs" />
     <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\TextAppear.cs" />
+    <Compile Include="Assets\Scripts\TextOnClick.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\Timer2.cs" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

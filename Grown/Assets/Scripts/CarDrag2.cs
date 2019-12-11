@@ -9,7 +9,7 @@ public class CarDrag2 : MonoBehaviour
     public Rigidbody2D car;
     public Vector2 direction;
     //public float boostSpeed = 5f;
-    public float moveSpeed = 1f;
+    public float moveSpeed = 10f;
     //public float slowSpeed = 0.25f;
 
     public static bool driveBack;
@@ -19,7 +19,7 @@ public class CarDrag2 : MonoBehaviour
     void Start()
     {
         car = GetComponent<Rigidbody2D>();
-        car.transform.position = new Vector3(7.94f, 1.85f, -476.9f);
+        car.transform.position = new Vector3(6.70f, 1.85f, -0.0f);
         driveBack = false;
         driveLast = false;
         Fade.moveLevel = true;
@@ -39,7 +39,7 @@ public class CarDrag2 : MonoBehaviour
             car.velocity = Vector2.zero;
         }
 
-        if (car.position.x <= -8.0f && driveBack == false)
+        if (car.position.x <= -7.35f && driveBack == false)
         {
             Debug.Log("Car reached home.");
             //LoadByIndex(4);
@@ -47,7 +47,7 @@ public class CarDrag2 : MonoBehaviour
             Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
         }
-        else if (car.position.x <= -8.0f && driveLast == true)
+        else if (car.position.x <= -7.35f && driveLast == true)
         {
             Debug.Log("Car reached home.");
             //LoadByIndex(4);

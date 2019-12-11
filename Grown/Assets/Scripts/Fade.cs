@@ -48,11 +48,13 @@ public class Fade : MonoBehaviour
             moveLevel = true;
             Debug.Log("FADE TO PACK");
         }
-        else if (Timer.time1 == true && moveLevel == false)
+        else if (Timer.time1 == true && Timer.time2 == false && Timer.time3 == false && moveLevel == false)
         {
             FadetoLevel(2);
             animator.SetTrigger("FadeIn");
             Timer.time1 = false;
+            Timer.time2 = true;
+            Timer.time3 = false;
             moveLevel = true;
             Debug.Log("FADE TO WALK");
         }
@@ -85,18 +87,17 @@ public class Fade : MonoBehaviour
             FadetoLevel(1);
             animator.SetTrigger("FadeIn");
             CarDrag2.driveBack = false;
-            Timer.time1 = true;
             moveLevel = true;
             Debug.Log("FADE TO PACK 2");
         }
-        else if (CarDrag2.driveBack == true && moveLevel == false)
+        /*else if (CarDrag2.driveBack == true && moveLevel == false)
         {
             FadetoLevel(1);
             animator.SetTrigger("FadeIn");
             CarDrag2.driveBack = false;
             moveLevel = true;
-            Debug.Log("FADE TO WALK");
-        }
+            Debug.Log("FADE TO WALK 2");
+        }*/
     }
 
 
@@ -109,6 +110,6 @@ public class Fade : MonoBehaviour
 
     public void OnFadeComplete()
     {
-        SceneManager.LoadScene(leveltoLoad);
+        SceneManager.LoadSceneAsync(leveltoLoad);
     }
 }

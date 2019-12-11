@@ -47,7 +47,7 @@ public class Timer : MonoBehaviour
             Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
             time1 = true;
-            time2 = true;
+            time2 = false;
             time3 = false;
             LoopOne.SetActive(true);
             LoopTwo.SetActive(true);
@@ -71,7 +71,7 @@ public class Timer : MonoBehaviour
         {
             //startFading();
             //LoadByIndex(2);
-            Debug.Log("Item Loop 3 starting...");
+            Debug.Log("Item Loop Done.");
             StartCoroutine(LoadYourAsyncScene());
             Fade.moveLevel = false;
             LoopOne.SetActive(true);

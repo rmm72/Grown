@@ -24,7 +24,7 @@ public class CarDrag : MonoBehaviour
     void Start()
     {
         car = GetComponent<Rigidbody2D>();
-        car.transform.position = new Vector3(-8.85f, 1.89f, -476.9f);
+        car.transform.position = new Vector3(-6.85f, 1.89f, 0.0f);
         drive1 = false;
         drive2 = false;
         drive3 = false;
@@ -48,7 +48,7 @@ public class CarDrag : MonoBehaviour
             car.velocity = Vector2.zero;
         }
 
-        if (car.position.x >= 7.80f && drive1 == false && drive2 == false && drive3 == false)
+        if (car.position.x >= 7.50f && drive1 == false && drive2 == false && drive3 == false)
         {
             Debug.Log("Car reached end.");
             //LoadByIndex(4);
@@ -61,7 +61,7 @@ public class CarDrag : MonoBehaviour
             bubbles3.SetActive(false);
             StartCoroutine(LoadYourAsyncScene());
         }
-        else if (car.position.x >= 7.80f && drive1 == false && drive2 == true && drive3 == false)
+        else if (car.position.x >= 7.50f && drive1 == false && drive2 == true && drive3 == false)
         {
             Debug.Log("Car reached end.");
             //LoadByIndex(4);
@@ -74,7 +74,7 @@ public class CarDrag : MonoBehaviour
             bubbles3.SetActive(true);
             StartCoroutine(LoadYourAsyncScene());
         }
-        else if (car.position.x >= 7.80f && drive1 == false && drive2 == false && drive3 == true)
+        else if (car.position.x >= 7.50f && drive1 == false && drive2 == false && drive3 == true)
         {
             Debug.Log("Car reached end.");
             //LoadByIndex(4);
