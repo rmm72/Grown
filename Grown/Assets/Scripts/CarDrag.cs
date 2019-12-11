@@ -12,7 +12,13 @@ public class CarDrag : MonoBehaviour
     public float moveSpeed = 1f;
     public float slowSpeed = 0.25f;
 
+    public GameObject bubbles1;
+    public GameObject bubbles2;
+    public GameObject bubbles3;
+
     public static bool drive1;
+    public static bool drive2;
+    public static bool drive3;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +26,12 @@ public class CarDrag : MonoBehaviour
         car = GetComponent<Rigidbody2D>();
         car.transform.position = new Vector3(-8.85f, 1.89f, -476.9f);
         drive1 = false;
+        drive2 = false;
+        drive3 = false;
         Fade.moveLevel = true;
+        bubbles1.SetActive(true);
+        bubbles2.SetActive(false);
+        bubbles3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -37,12 +48,43 @@ public class CarDrag : MonoBehaviour
             car.velocity = Vector2.zero;
         }
 
-        if (car.position.x >= 7.80f)
+        if (car.position.x >= 7.80f && drive1 == false && drive2 == false && drive3 == false)
         {
             Debug.Log("Car reached end.");
             //LoadByIndex(4);
             drive1 = true;
+            drive2 = true;
+            drive3 = false;
             Fade.moveLevel = false;
+            bubbles1.SetActive(false);
+            bubbles2.SetActive(true);
+            bubbles3.SetActive(false);
+            StartCoroutine(LoadYourAsyncScene());
+        }
+        else if (car.position.x >= 7.80f && drive1 == false && drive2 == true && drive3 == false)
+        {
+            Debug.Log("Car reached end.");
+            //LoadByIndex(4);
+            drive1 = false;
+            drive2 = true;
+            drive3 = true;
+            Fade.moveLevel = false;
+            bubbles1.SetActive(false);
+            bubbles2.SetActive(false);
+            bubbles3.SetActive(true);
+            StartCoroutine(LoadYourAsyncScene());
+        }
+        else if (car.position.x >= 7.80f && drive1 == false && drive2 == false && drive3 == true)
+        {
+            Debug.Log("Car reached end.");
+            //LoadByIndex(4);
+            drive1 = true;
+            drive2 = true;
+            drive3 = false;
+            Fade.moveLevel = false;
+            bubbles1.SetActive(false);
+            bubbles2.SetActive(false);
+            bubbles3.SetActive(false);
             StartCoroutine(LoadYourAsyncScene());
         }
     }

@@ -38,7 +38,7 @@ public class MoveCharacter : MonoBehaviour
                 //levelTwo.SetActive(false);
                 //levelThree.SetActive(true);
                 walk1 = true;
-                walk2 = false;
+                walk2 = true;
                 walk3 = false;
                 Fade.moveLevel = false;
                 //LoadByIndex(3);
@@ -49,7 +49,7 @@ public class MoveCharacter : MonoBehaviour
             {
                 positionX += 0.75f;
             }
-        } else if (walk1 == true && walk2 == false && walk3 == false)
+        } else if (walk1 == false && walk2 == true && walk3 == false)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {
@@ -65,7 +65,7 @@ public class MoveCharacter : MonoBehaviour
                 //levelThree.SetActive(true); 
                 walk1 = false;
                 walk2 = true;
-                walk3 = false;
+                walk3 = true;
                 Fade.moveLevel = false;
                 StartCoroutine(LoadYourAsyncScene());
                 Debug.Log("Walking Loop 2 done.");
@@ -74,7 +74,7 @@ public class MoveCharacter : MonoBehaviour
             {
                 positionX += 1.15f;
             }
-        } else if (walk1 == true && walk2 == true && walk3 == false)
+        } else if (walk1 == false && walk2 == false && walk3 == true)
         {
             if (positionX > -3.24f && positionX < 4.24f)
             {

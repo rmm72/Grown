@@ -12,10 +12,17 @@ public class CarDrag2 : MonoBehaviour
     public float moveSpeed = 1f;
     //public float slowSpeed = 0.25f;
 
+    public static bool driveBack;
+    public static bool driveLast;
+
     // Start is called before the first frame update
     void Start()
     {
         car = GetComponent<Rigidbody2D>();
+        car.transform.position = new Vector3(7.94f, 1.85f, -476.9f);
+        driveBack = false;
+        driveLast = false;
+        Fade.moveLevel = true;
     }
 
     // Update is called once per frame
@@ -32,11 +39,20 @@ public class CarDrag2 : MonoBehaviour
             car.velocity = Vector2.zero;
         }
 
-        if (car.position.x <= -8.0f)
+        if (car.position.x <= -8.0f && driveBack == false)
         {
-            Debug.Log("Car reached end.");
+            Debug.Log("Car reached home.");
             //LoadByIndex(4);
+            driveBack = true;
+            Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
+        }
+        else if (car.position.x <= -8.0f && driveLast == true)
+        {
+            Debug.Log("Car reached home.");
+            //LoadByIndex(4);
+            Fade.moveLevel = false;
+            StartCoroutine(LoadYourCredits());
         }
     }
 
@@ -69,10 +85,26 @@ public class CarDrag2 : MonoBehaviour
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("07_Credits");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("02_Packing");
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+    IEnumerator LoadYourCredits()
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncCred = SceneManager.LoadSceneAsync("07_Credits");
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncCred.isDone)
         {
             yield return null;
         }

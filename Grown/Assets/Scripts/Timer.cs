@@ -9,11 +9,10 @@ public class Timer : MonoBehaviour
     public static float timeLeft = 15f;
 
     public bool startTimer;
-    public static bool moveNext;
 
-    public bool first;
-    public bool second;
-    public bool third;
+    public static bool time1;
+    public static bool time2;
+    public static bool time3;
     public GameObject LoopOne;
     public GameObject LoopTwo;
     public GameObject LoopThree;
@@ -27,11 +26,10 @@ public class Timer : MonoBehaviour
         solid.material.color = c;
         startTimer = false;
         moveNext = false;*/
-        moveNext = false;
         Fade.moveLevel = true;
-        first = true;
-        second = false;
-        third = false;
+        time1 = false;
+        time2 = false;
+        time3 = false;
         LoopOne.SetActive(true);
         LoopTwo.SetActive(false);
         LoopThree.SetActive(false);
@@ -41,36 +39,45 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timeLeft -= Time.deltaTime;
-        if (timeLeft <= 0 && first == true && second == false && third == false)
+        if (timeLeft <= 0 && time1 == false && time2 == false && time3 == false)
         {
             //startFading();
             //LoadByIndex(2);
             Debug.Log("Item Loop 2 starting...");
-            moveNext = true;
             Fade.moveLevel = false;
             StartCoroutine(LoadYourAsyncScene());
-            first = true;
-            second = true;
-            third = false;
+            time1 = true;
+            time2 = true;
+            time3 = false;
             LoopOne.SetActive(true);
             LoopTwo.SetActive(true);
             LoopThree.SetActive(false);
         }
-        /*else if (timeLeft <= 0 && first == true && second == true && third == false)
+        else if (timeLeft <= 0 && time1 == false && time2 == true && time3 == false)
         {
             //startFading();
             //LoadByIndex(2);
             Debug.Log("Item Loop 3 starting...");
             StartCoroutine(LoadYourAsyncScene());
-            moveNext = true;
             Fade.moveLevel = false;
-            first = true;
-            second = true;
-            third = true;
+            time1 = false;
+            time2 = true;
+            time3 = true;
             LoopOne.SetActive(true);
             LoopTwo.SetActive(true);
             LoopThree.SetActive(true);
-        }*/
+        }
+        else if (timeLeft <= 0 && time1 == false && time2 == false && time3 == true)
+        {
+            //startFading();
+            //LoadByIndex(2);
+            Debug.Log("Item Loop 3 starting...");
+            StartCoroutine(LoadYourAsyncScene());
+            Fade.moveLevel = false;
+            LoopOne.SetActive(true);
+            LoopTwo.SetActive(true);
+            LoopThree.SetActive(true);
+        }
         //timeLeft = 0;
         //startFading();
 
